@@ -39,7 +39,7 @@ allprojects {
 添加依赖
 ```
 dependencies {
-    api('com.fota.android:option:0.1.0@aar') { transitive = true; }
+    api('com.fota.android:option:0.3.3@aar') { transitive = true; }
 }
 ```
 
@@ -79,29 +79,7 @@ startActivity(intent);
 ### 3.1 回调事件
 
 ```java
-//设置页面跳转的回调
-config.setPageChangeListener(new OptionConfig.PageChangeListener() {
-    @Override
-    public void gotoDepositPage(Context context) {
-        //跳转充值界面的回调
-        ...
-    }
 
-    @Override
-    public void gotoLoginPage(Context context) {
-        //跳转登录界面的回调
-        ...
-    }
-
-    @Override
-    public void gotoAllOrderPage(Context context) {
-        //跳转全部订单界面的回调
-        ...
-    }
-    });
-
-
-//0.3.0 之后请用如下方式设置
 config.setDepositPageChangeListener(new OptionConfig.DepositPageChangeListener() {
     @Override
     public void gotoDepositPage(Activity activity, AccountInfo currentAccountInfo, boolean loginSuccess) {
