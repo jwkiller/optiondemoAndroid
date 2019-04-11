@@ -209,7 +209,7 @@ config.setOrderListener(new OptionConfig.OrderListener() {
 
     }
 });
-```
+
 
 config.setSettleListener(new OptionConfig.SettleListener() {
     /**
@@ -226,6 +226,7 @@ config.setSettleListener(new OptionConfig.SettleListener() {
     }
 });
 
+```
 
 ===sdk v0.3.2版本更新功能===
 
