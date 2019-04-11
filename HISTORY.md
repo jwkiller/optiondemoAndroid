@@ -1,6 +1,6 @@
 # 更新记录
 
-===sdk v0.3.3版本更新功能===
+## ===sdk v0.3.3版本更新功能===
 
 1.新增排行版功能
 
@@ -42,11 +42,11 @@ config.setSettleListener(new OptionConfig.SettleListener() {
 
 ```
 
-===sdk v0.3.2版本更新功能===
+## ===sdk v0.3.2版本更新功能===
 
 1.修改混淆
 
-===sdk v0.3.1版本更新功能===
+## ===sdk v0.3.1版本更新功能===
 
 1.声音提示跟随铃声提示
 
@@ -55,7 +55,7 @@ config.setSettleListener(new OptionConfig.SettleListener() {
 3.其他问题修复
 
 
-===sdk v0.3.0版本更新功能===
+## ===sdk v0.3.0版本更新功能===
 
 1.config添加是否开启日志调试功能
 ```java
