@@ -42,6 +42,11 @@ config.setSettleListener(new OptionConfig.SettleListener() {
 
 ```
 
+4.增加退出登录回调
+```java
+OptionManager.logOut();
+```
+
 ## sdk v0.3.2版本更新功能
 
 1.修改混淆

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.fota.option.OptionManager;
 import com.fota.option.OptionSdkActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, OptionSdkActivity.class);
                 startActivity(intent);
+
             }
         });
     }
