@@ -139,6 +139,7 @@ private OptionConfig getOptionConfig() {
     config.setLogEnable(false);
     //侧边栏风格 默认开启
     config.setSidebarStyle(true);
+    //设置开发环境
     config.setDevelopment(true);
     //默认是铃声一般不用修改
     config.setStreamType(AudioManager.STREAM_RING);
