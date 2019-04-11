@@ -76,38 +76,74 @@ startActivity(intent);
 
 ## 三、接口说明
 
-### 3.1 回调事件
+### 3.1 配置说明
 
 ```java
 
-config.setDepositPageChangeListener(new OptionConfig.DepositPageChangeListener() {
-    @Override
-    public void gotoDepositPage(Activity activity, AccountInfo currentAccountInfo, boolean loginSuccess) {
-        //跳转充值界面的回调
-        //currentAccountInfo 当前账户信息
-        //loginSuccess 是否成功登录期权 主要设计token过期和环境设置不对 导致内外不一致
-        Intent intent = new Intent(activity, DepositPageActivity.class);
-        activity.startActivity(intent);
-    }
-});
+@NonNull
+private OptionConfig getOptionConfig() {
+    OptionConfig config = new OptionConfig();
+        config.setAllOrderPageChangeListener(new OptionConfig.AllOrderPageChangeListener() {
+        @Override
+        public void gotoAllOrderPage(Activity activity, AccountInfo accountInfo, boolean b) {
+            Intent intent = new Intent(activity, AllOrderPageActivity.class);
+            startActivity(intent);
+        }
+    });
 
-config.setLoginPageChangeListener(new OptionConfig.LoginPageChangeListener() {
-    @Override
-    public void gotoLoginPage(Activity activity) {
-        //跳转登录界面的回调
-        Intent intent = new Intent(activity, LoginPageActivity.class);
-        activity.startActivity(intent);
-    }
-});
+    config.setLoginPageChangeListener(new OptionConfig.LoginPageChangeListener() {
+        @Override
+        public void gotoLoginPage(Activity activity) {
+            Intent intent = new Intent(activity, LoginPageActivity.class);
+            startActivity(intent);
+        }
+    });
 
-config.setAllOrderPageChangeListener(new OptionConfig.AllOrderPageChangeListener() {
-    @Override
-    public void gotoAllOrderPage(Activity activity, AccountInfo currentAccountInfo, boolean loginSuccess) {
-        //跳转全部订单界面的回调
-        Intent intent = new Intent(activity, AllOrderPageActivity.class);
-        activity.startActivity(intent);
-    }
-});
+    config.setDepositPageChangeListener(new OptionConfig.DepositPageChangeListener() {
+        @Override
+            public void gotoDepositPage(Activity activity, AccountInfo accountInfo, boolean b) {
+                Intent intent = new Intent(activity, DepositPageActivity.class);
+                startActivity(intent);
+        }
+    });
+
+    config.setOrderListener(new OptionConfig.OrderListener() {
+        /**
+         * 下单回调
+         * order
+         *
+         * @param orderEntity 下单返回实体，包括String asset 标的物;int direction 方向;String investmentAmount 投资数量;String totalProfit 收益;
+         * @param accountCurrency 下注的账户币种 accountCurrency;
+         * @param errorMessage 错误信息，无错误为null
+         */
+        @Override
+        public void orderCallback(OptionTransfer orderEntity, String accountCurrency, String errorMessage) {
+
+        }
+    });
+    config.setSettleListener(new OptionConfig.SettleListener() {
+        /**
+         * 结算回调
+         * Settle
+         *
+         * @param profit 收益
+         * @param assetCode 标的物：1 BTC，2 ETH
+         * @param accountCurrency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
+         */
+        @Override
+        public void settleCallback(String profit, int assetCode, int accountCurrency) {
+
+        }
+    });
+    //日志开关 调试的时候查看
+    config.setLogEnable(false);
+    //侧边栏风格 默认开启
+    config.setSidebarStyle(true);
+    config.setDevelopment(true);
+    //默认是铃声一般不用修改
+    config.setStreamType(AudioManager.STREAM_RING);
+    return config;
+}
 
 ```
 

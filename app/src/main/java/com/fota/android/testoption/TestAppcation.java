@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.support.annotation.NonNull;
 
 import com.fota.android.commonlib.utils.SharedPreferencesUtil;
@@ -39,10 +40,6 @@ public class TestAppcation extends Application {
     @NonNull
     private OptionConfig getOptionConfig() {
         OptionConfig config = new OptionConfig();
-
-//        config.setHttpHost("https://api-test.fota.com/mapi/");
-//        config.setSocketHost("wss://api-test.fota.com/mapi/websocket");
-
         config.setAllOrderPageChangeListener(new OptionConfig.AllOrderPageChangeListener() {
             @Override
             public void gotoAllOrderPage(Activity activity, AccountInfo accountInfo, boolean b) {
@@ -95,7 +92,15 @@ public class TestAppcation extends Application {
 
             }
         });
+        //日志开关 调试的时候查看
+        config.setLogEnable(false);
+        //侧边栏风格 默认开启
+        config.setSidebarStyle(true);
+        config.setDevelopment(true);
+        //默认是铃声一般不用修改
+        config.setStreamType(AudioManager.STREAM_RING);
         return config;
     }
 
 }
+
