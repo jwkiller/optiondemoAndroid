@@ -43,6 +43,7 @@ public class TestAppcation extends Application {
         config.setAllOrderPageChangeListener(new OptionConfig.AllOrderPageChangeListener() {
             @Override
             public void gotoAllOrderPage(Activity activity, AccountInfo accountInfo, boolean b) {
+                //跳转全部订单
                 Intent intent = new Intent(activity, AllOrderPageActivity.class);
                 startActivity(intent);
             }
@@ -51,6 +52,7 @@ public class TestAppcation extends Application {
         config.setLoginPageChangeListener(new OptionConfig.LoginPageChangeListener() {
             @Override
             public void gotoLoginPage(Activity activity) {
+                //跳转登录
                 Intent intent = new Intent(activity, LoginPageActivity.class);
                 startActivity(intent);
             }
@@ -59,6 +61,7 @@ public class TestAppcation extends Application {
         config.setDepositPageChangeListener(new OptionConfig.DepositPageChangeListener() {
             @Override
             public void gotoDepositPage(Activity activity, AccountInfo accountInfo, boolean b) {
+                //跳转充值
                 Intent intent = new Intent(activity, DepositPageActivity.class);
                 startActivity(intent);
             }

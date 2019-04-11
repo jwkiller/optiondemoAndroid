@@ -86,14 +86,16 @@ private OptionConfig getOptionConfig() {
         config.setAllOrderPageChangeListener(new OptionConfig.AllOrderPageChangeListener() {
         @Override
         public void gotoAllOrderPage(Activity activity, AccountInfo accountInfo, boolean b) {
+            //跳转全部订单
             Intent intent = new Intent(activity, AllOrderPageActivity.class);
             startActivity(intent);
         }
-    });
+        });
 
-    config.setLoginPageChangeListener(new OptionConfig.LoginPageChangeListener() {
+        config.setLoginPageChangeListener(new OptionConfig.LoginPageChangeListener() {
         @Override
         public void gotoLoginPage(Activity activity) {
+            //跳转登录
             Intent intent = new Intent(activity, LoginPageActivity.class);
             startActivity(intent);
         }
@@ -101,9 +103,10 @@ private OptionConfig getOptionConfig() {
 
     config.setDepositPageChangeListener(new OptionConfig.DepositPageChangeListener() {
         @Override
-            public void gotoDepositPage(Activity activity, AccountInfo accountInfo, boolean b) {
-                Intent intent = new Intent(activity, DepositPageActivity.class);
-                startActivity(intent);
+        public void gotoDepositPage(Activity activity, AccountInfo accountInfo, boolean b) {
+            //跳转充值
+            Intent intent = new Intent(activity, DepositPageActivity.class);
+            startActivity(intent);
         }
     });
 
@@ -111,27 +114,28 @@ private OptionConfig getOptionConfig() {
         /**
          * 下单回调
          * order
-         *
+         * @param activity
          * @param orderEntity 下单返回实体，包括String asset 标的物;int direction 方向;String investmentAmount 投资数量;String totalProfit 收益;
          * @param accountCurrency 下注的账户币种 accountCurrency;
          * @param errorMessage 错误信息，无错误为null
          */
         @Override
-        public void orderCallback(OptionTransfer orderEntity, String accountCurrency, String errorMessage) {
+        public void orderCallback(Activity activity, OptionTransfer orderEntity, String accountCurrency, String errorMessage) {
 
         }
     });
+
     config.setSettleListener(new OptionConfig.SettleListener() {
         /**
          * 结算回调
          * Settle
-         *
+         * @param activity
          * @param profit 收益
          * @param assetCode 标的物：1 BTC，2 ETH
          * @param accountCurrency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
          */
         @Override
-        public void settleCallback(String profit, int assetCode, int accountCurrency) {
+        public void settleCallback(Activity activity, String profit, int assetCode, int accountCurrency) {
 
         }
     });
@@ -139,7 +143,6 @@ private OptionConfig getOptionConfig() {
     config.setLogEnable(false);
     //侧边栏风格 默认开启
     config.setSidebarStyle(true);
-    //设置开发环境
     config.setDevelopment(true);
     //默认是铃声一般不用修改
     config.setStreamType(AudioManager.STREAM_RING);
@@ -213,6 +216,12 @@ OptionManager.getConfig()
 ```
 
 ### 为什么我设置了token和userId，依然显示未登录
+```java
+//对应的开发环境的token和userId是不一样 这个需要设置成对应的地址
+config.setDevelopment(boolean development);
+```
+
+###
 ```java
 //对应的开发环境的token和userId是不一样 这个需要设置成对应的地址
 config.setDevelopment(boolean development);
