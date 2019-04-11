@@ -12,6 +12,7 @@ import com.fota.option.OptionConfig;
 import com.fota.option.OptionManager;
 import com.fota.option.OptionSdkActivity;
 import com.fota.option.websocket.data.AccountInfo;
+import com.fota.option.websocket.data.OptionTransfer;
 
 public class TestAppcation extends Application {
 
@@ -24,8 +25,6 @@ public class TestAppcation extends Application {
 //        OptionManager.userId = "2508713162866033664";
 //        OptionManager.token = "me5a1nvy6m";
 //        OptionManager.getConfig().setDevelopment(true);
-
-
 
 
         //预发 BW
@@ -65,6 +64,35 @@ public class TestAppcation extends Application {
             public void gotoDepositPage(Activity activity, AccountInfo accountInfo, boolean b) {
                 Intent intent = new Intent(activity, DepositPageActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        config.setOrderListener(new OptionConfig.OrderListener() {
+            /**
+             * 下单回调
+             * order
+             *
+             * @param orderEntity 下单返回实体，包括String asset 标的物;int direction 方向;String investmentAmount 投资数量;String totalProfit 收益;
+             * @param accountCurrency 下注的账户币种 accountCurrency;
+             * @param errorMessage 错误信息，无错误为null
+             */
+            @Override
+            public void orderCallback(OptionTransfer orderEntity, String accountCurrency, String errorMessage) {
+
+            }
+        });
+        config.setSettleListener(new OptionConfig.SettleListener() {
+            /**
+             * 结算回调
+             * Settle
+             *
+             * @param profit 收益
+             * @param assetCode 标的物：1 BTC，2 ETH
+             * @param accountCurrency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
+             */
+            @Override
+            public void settleCallback(String profit, int assetCode, int accountCurrency) {
+
             }
         });
         return config;
