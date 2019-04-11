@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Option Demo</string>
+    <string name="action_settings">Settings</string>
+    <string name="deposit_page_name">充值界面</string>
+    <string name="login_page_name">登录界面</string>
+    <string name="all_order_page_name">全部订单界面</string>
+</resources>

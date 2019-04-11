@@ -1,0 +1,13 @@
+/build
+.gradle
+*.iml
+/.idea/*
+/commonlib/build
+/option/build
+/fotaoptionlib/build
+/mpchartlib/build
+/app/build
+local.properties
+
+
+
