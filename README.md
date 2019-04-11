@@ -1,4 +1,4 @@
-# optionDemo-Android
+# optionDemoAndroid
 ## 目录
 - [一、集成SDK](#一集成sdk)
 - [二、快速使用SDK](#二快速使用sdk)
