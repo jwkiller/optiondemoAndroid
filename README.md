@@ -257,8 +257,8 @@ public void setLogEnable(boolean logEnable) {
 
 以下是SDK部分功能截图
 
-![图片说明1](https://github.com/jwkiller/optionDemo-Android/blob/master/1.jpg)
+![图片说明1](https://github.com/jwkiller/optiondemoAndroid/blob/master/screenshot/1.jpg)
 
-![图片说明2](https://github.com/jwkiller/optionDemo-Android/blob/master/2.jpg)
+![图片说明2](https://github.com/jwkiller/optiondemoAndroid/blob/master/screenshot/2.jpg)
 
-![图片说明3](https://github.com/jwkiller/optionDemo-Android/blob/master/3.jpg)
+![图片说明3](https://github.com/jwkiller/optiondemoAndroid/blob/master/screenshot/3.jpg)
