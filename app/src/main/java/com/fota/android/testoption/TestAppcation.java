@@ -68,27 +68,28 @@ public class TestAppcation extends Application {
             /**
              * 下单回调
              * order
-             *
+             * @param activity
              * @param orderEntity 下单返回实体，包括String asset 标的物;int direction 方向;String investmentAmount 投资数量;String totalProfit 收益;
              * @param accountCurrency 下注的账户币种 accountCurrency;
              * @param errorMessage 错误信息，无错误为null
              */
             @Override
-            public void orderCallback(OptionTransfer orderEntity, String accountCurrency, String errorMessage) {
+            public void orderCallback(Activity activity, OptionTransfer orderEntity, String accountCurrency, String errorMessage) {
 
             }
         });
+
         config.setSettleListener(new OptionConfig.SettleListener() {
             /**
              * 结算回调
              * Settle
-             *
+             * @param activity
              * @param profit 收益
              * @param assetCode 标的物：1 BTC，2 ETH
              * @param accountCurrency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
              */
             @Override
-            public void settleCallback(String profit, int assetCode, int accountCurrency) {
+            public void settleCallback(Activity activity, String profit, int assetCode, int accountCurrency) {
 
             }
         });
