@@ -26,14 +26,10 @@ public class TestAppcation extends Application {
 //        OptionManager.userId = "2508713162866033664";
 //        OptionManager.token = "me5a1nvy6m";
 //        OptionManager.getConfig().setDevelopment(true);
-
-
         //预发 BW
         config.setLogEnable(true);
         config.setDevelopment(true);
-        OptionManager.userId = "2509475866067207168";
-        OptionManager.token = "wn6avpsjft";
-        OptionManager.init("8", config, this);
+        OptionManager.init("14", config, this);
 
     }
 
