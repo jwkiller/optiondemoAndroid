@@ -129,16 +129,19 @@ private OptionConfig getOptionConfig() {
         /**
          * 结算回调
          * Settle
-         * @param activity
-         * @param profit 收益
-         * @param assetCode 标的物：1 BTC，2 ETH
-         * @param accountCurrency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
+         *  activity
+         *  改为json String 回调，可能包含的key有
+         *  profit          收益
+         *  assetCode       标的物：1 BTC，2 ETH
+         *  currency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
+         *  profitRate 本轮投资收益率
          */
-        @Override
-        public void settleCallback(Activity activity, String profit, int assetCode, int accountCurrency) {
+        void settleCallback(Activity activity, String jsonSettle);
 
         }
     });
+
+
     //日志开关 调试的时候查看
     config.setLogEnable(false);
     //侧边栏风格 默认开启
@@ -208,7 +211,7 @@ config.setDevelopment(boolean development);
 
 
 ### 3.5 设置混淆
-[参考混淆](https://github.com/jwkiller/optiondemoAndroid/blob/master/app/proguard-rules.pro)
+[参考混淆文件](https://github.com/jwkiller/optiondemoAndroid/blob/master/app/proguard-rules.pro)
 
 ## 四、常见问题
 
