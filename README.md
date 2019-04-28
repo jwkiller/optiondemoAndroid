@@ -206,6 +206,10 @@ OptionManager.setUserIdAndToken("your userId","your login token");
 config.setDevelopment(boolean development);
 ```
 
+
+### 3.5 设置混淆
+[参考混淆](https://github.com/jwkiller/optiondemoAndroid/blob/master/app/proguard-rules.pro)
+
 ## 四、常见问题
 
 
