@@ -68,7 +68,7 @@ OptionManager.init("your brokerId", getOptionConfig(), this);
 ### 2.2 进入期权界面
 
 ```java
-Intent intent = new Intent(getContext(), OptionActivity.class);
+Intent intent = new Intent(getContext(), OptionSdkActivity.class);
 startActivity(intent);
 ```
 
@@ -212,6 +212,9 @@ config.setDevelopment(boolean development);
 
 ### 3.5 设置混淆
 [参考混淆文件](https://github.com/jwkiller/optiondemoAndroid/blob/master/app/proguard-rules.pro)
+
+### 3.6
+修改部分体验
 
 ## 四、常见问题
 
