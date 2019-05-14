@@ -228,13 +228,7 @@ OptionManager.getConfig()
 config.setDevelopment(boolean development);
 ```
 
-###
-```java
-//对应的开发环境的token和userId是不一样 这个需要设置成对应的地址
-config.setDevelopment(boolean development);
-```
-
-###去除排行版方法
+### 去除排行版方法
 ```java
 //去除排行版 设置setOptionMenuItems 注释掉对应菜单Items即可
 List<OptionMenuItem> optionMenuItems = new ArrayList<>();
