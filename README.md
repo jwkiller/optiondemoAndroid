@@ -39,7 +39,7 @@ allprojects {
 添加依赖
 ```
 dependencies {
-    api('com.fota.android:option:0.3.3@aar') { transitive = true; }
+    api('com.fota.android:option:0.3.6@aar') { transitive = true; }
 }
 ```
 
