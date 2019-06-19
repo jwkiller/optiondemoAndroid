@@ -39,7 +39,8 @@ allprojects {
 添加依赖
 ```
 dependencies {
-    api('com.fota.android:option:0.3.6@aar') { transitive = true; }
+    api('com.fota.android:option:x.x.x@aar') { transitive = true; }
+    //x.x.x表示你所需要使用版本号 一般是最新版本
 }
 ```
 
@@ -240,12 +241,17 @@ optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_VIDEO_LIST, com.fota.o
 config.setOptionMenuItems(optionMenuItems);
 ```
 
-### OptionMenuKey
+### OptionMenuKey 含义
 MENU_BACK ==>返回
+
 MENU_TRADE_HISTORY ==>历史记录
+
 MENU_SPOT_INDEX ==>指数
+
 MENU_RANKING_LIST ==>排行版
+
 MENU_VIDEO_LIST ==>视频去除
+
 
 ## 五、更新记录
 
