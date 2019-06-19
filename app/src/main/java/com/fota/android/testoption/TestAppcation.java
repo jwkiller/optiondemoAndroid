@@ -2,18 +2,13 @@ package com.fota.android.testoption;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.support.annotation.NonNull;
 
 import com.fota.android.commonlib.utils.SharedPreferencesUtil;
-import com.fota.android.commonlib.utils.ToastUitl;
 import com.fota.option.OptionConfig;
 import com.fota.option.OptionManager;
-import com.fota.option.OptionMenuItem;
-import com.fota.option.OptionMenuKey;
-import com.fota.option.OptionSdkActivity;
 import com.fota.option.websocket.data.AccountInfo;
 import com.fota.option.websocket.data.OptionTransfer;
 
@@ -103,19 +98,13 @@ public class TestAppcation extends Application {
 
         });
         //去除排行版 设置setOptionMenuItems 注释掉对应菜单Items即可
-        List<OptionMenuItem> optionMenuItems = new ArrayList<>();
-        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_BACK,
-                com.fota.option.R.mipmap.icon_back, com.fota.option.R.mipmap.icon_back));
-        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_TRADE_HISTORY,
-                com.fota.option.R.mipmap.left_menu_history_on,
-                com.fota.option.R.mipmap.left_menu_history_off));
-        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_SPOT_INDEX,
-                com.fota.option.R.mipmap.left_menu_index_on,
-                com.fota.option.R.mipmap.left_menu_index_off));
-//        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_SPOT_INDEX,
-//                com.fota.option.R.mipmap.left_munu_rank_on,
-//                com.fota.option.R.mipmap.left_munu_rank_off));
-        config.setOptionMenuItems(optionMenuItems);
+//        List<OptionMenuItem> optionMenuItems = new ArrayList<>();
+//        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_BACK, com.fota.option.R.mipmap.icon_back, com.fota.option.R.mipmap.icon_back));
+//        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_TRADE_HISTORY, com.fota.option.R.mipmap.left_menu_history_on, com.fota.option.R.mipmap.left_menu_history_off));
+//        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_SPOT_INDEX, com.fota.option.R.mipmap.left_menu_index_on, com.fota.option.R.mipmap.left_menu_index_off));
+//        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_RANKING_LIST, com.fota.option.R.mipmap.left_munu_rank_on, com.fota.option.R.mipmap.left_munu_rank_off));
+//        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_VIDEO_LIST, com.fota.option.R.mipmap.left_menu_video_on, com.fota.option.R.mipmap.left_menu_video_off));
+//        config.setOptionMenuItems(optionMenuItems);
         //日志开关 调试的时候查看
         config.setLogEnable(false);
         //侧边栏风格 默认开启
