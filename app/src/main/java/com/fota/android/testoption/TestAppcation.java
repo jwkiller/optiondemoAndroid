@@ -22,14 +22,15 @@ public class TestAppcation extends Application {
         super.onCreate();
         SharedPreferencesUtil.init(this);
         OptionConfig config = getOptionConfig();
-
-//        OptionManager.userId = "2508713162866033664";
-//        OptionManager.token = "me5a1nvy6m";
-//        OptionManager.getConfig().setDevelopment(true);
         //预发 BW
-        config.setLogEnable(true);
+        config.setLogEnable(BuildConfig.DEBUG);
         config.setDevelopment(true);
-        OptionManager.init("14", config, this);
+        OptionManager.userId = "2509811795991987200";
+        OptionManager.token = "kbcsp9lsra";
+        OptionManager.setBrokerId("2");
+
+
+        OptionManager.init("2", config, this);
 
     }
 
