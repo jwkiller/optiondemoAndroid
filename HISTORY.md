@@ -70,6 +70,21 @@ config.setSettleListener(new OptionConfig.SettleListener() {
 
     }
 });
+config.setSettleListener(new OptionConfig.SettleListener() {
+    /**
+    * 结算回调
+    * Settle
+    *  activity
+    *  改为json String 回调，可能包含的key有
+    *  profit          收益
+    *  assetCode       标的物：1 BTC，2 ETH
+    *  currency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
+    *  profitRate 本轮投资收益率
+    */
+    void settleCallback(Activity activity, String jsonSettle);
+
+    }
+});
 ```
 
 4.增加退出登录回调
