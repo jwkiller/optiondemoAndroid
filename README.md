@@ -229,7 +229,7 @@ OptionManager.getConfig()
 config.setDevelopment(boolean development);
 ```
 
-### 去除排行版方法
+### 去除对应菜单Item方法
 ```java
 //去除对应菜单 设置setOptionMenuItems 注释掉对应菜单Items即可
 List<OptionMenuItem> optionMenuItems = new ArrayList<>();
