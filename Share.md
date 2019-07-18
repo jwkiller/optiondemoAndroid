@@ -1,117 +1,23 @@
-# 更新记录
+# 友盟分享注册流程
 
-## v0.5.1
+## 1. 集成准备 参考如下链接中文档的集成准备 在友盟官网注册AppID 并提供给方图
 
-1.多次下单安全验证码添加
+https://developer.umeng.com/docs/66632/detail/66639
 
-## v0.5.0
+## 2. 注册提供各大平台账号打开如下链接,表格中第一列是平台名称，第二是平台官方地址，第三个是平台对应注册方法，根据注册流程提供各大平台的AppID给方图
 
-1.添加Gamma支持
+http://bbs.mob.com/thread-275-1-1.html
 
-## v0.4.1
+## 3.提供贵司注册好的AppID，以及密钥等，由于各平台所需要的信息可能不一样，尽可能提供全的信息给方图
 
-1.添加教学视频功能
+### 最终提供我司示例（需要什么平台对应什么平台）：
 
-## v0.4.0
+友盟Key：xxx
 
-1.添加连续缩放功能
+微信Key：xxx 微信密钥
 
-## v0.3.7
+QQKey：XXX
 
-1.添加灵活上币功能
+推特Key：XXX
 
-## v0.3.6
-
-1.修复部分问题
-
-## v0.3.5
-
-1.文案修改
-
-## v0.3.4
-
-1.新增本轮收益率
-
-## v0.3.3
-
-1.新增排行版功能
-
-2.新增昵称设置
-
-3.增加下单回调
-
-```java
-config.setOrderListener(new OptionConfig.OrderListener() {
-    /**
-     * 下单回调
-     * order
-     * @param activity
-     * @param orderEntity 下单返回实体，包括String asset 标的物;int direction 方向;String investmentAmount 投资数量;String totalProfit 收益;
-     * @param accountCurrency 下注的账户币种 accountCurrency;
-     * @param errorMessage 错误信息，无错误为null
-     */
-    @Override
-    public void orderCallback(Activity activity, OptionTransfer orderEntity, String accountCurrency, String errorMessage) {
-
-    }
-});
-
-config.setSettleListener(new OptionConfig.SettleListener() {
-    /**
-     * 结算回调
-     * Settle
-     * @param activity
-     * @param profit 收益
-     * @param assetCode 标的物：1 BTC，2 ETH
-     * @param accountCurrency 账户类型：2 BTC，3 ETH，4 FOTA，999 模拟金账户
-     */
-    @Override
-    public void settleCallback(Activity activity, String profit, int assetCode, int accountCurrency) {
-
-    }
-});
-```
-
-4.增加退出登录回调
-```java
-OptionManager.logOut();
-```
-
-## v0.3.2
-
-1.修改混淆
-
-## v0.3.1
-
-1.声音提示跟随铃声提示
-
-2.侧边栏风格变成可配置
-
-3.其他问题修复
-
-
-## v0.3.0
-
-1.config添加是否开启日志调试功能
-```java
-/**
- * 调试开关
- * @param logEnable 是否开启
- */
-public void setLogEnable(boolean logEnable) {
-    this.logEnable = logEnable;
-}
-```
-2.修改了页面跳转方式 详见 3.1 回调事件
-
-3.修改历史记录和指数界面为侧边栏显示
-
-4.添加下单、结算声音响应提示
-
-5.下单失败时显示提示
-
-6.修改所有历史记录显示逻辑，在无回调时不展示该按钮
-
-7.添加侧边栏UI修改
-
-
+...
