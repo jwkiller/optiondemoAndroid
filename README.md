@@ -250,7 +250,7 @@ MENU_SPOT_INDEX ==>指数
 
 MENU_RANKING_LIST ==>排行版
 
-MENU_VIDEO_LIST ==>视频去除
+MENU_VIDEO_LIST ==>视频教学
 
 
 ## 五、更新记录
