@@ -3,6 +3,7 @@ package com.fota.android.testoption;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.media.AudioManager;
 import android.support.annotation.NonNull;
 
@@ -99,6 +100,9 @@ public class TestAppcation extends Application {
             }
 
         });
+
+
+
         //去除排行版 设置setOptionMenuItems 注释掉对应菜单Items即可
 //        List<OptionMenuItem> optionMenuItems = new ArrayList<>();
 //        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_BACK, com.fota.option.R.mipmap.icon_back, com.fota.option.R.mipmap.icon_back));
@@ -112,7 +116,7 @@ public class TestAppcation extends Application {
         //侧边栏风格 默认开启
         config.setSidebarStyle(true);
         config.setDevelopment(true);
-        AppConfigs.setLanguege(AppConfigs.LANGAUGE_KOREAN);
+        AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_VIETNAMESE);
         //默认是铃声一般不用修改
         config.setStreamType(AudioManager.STREAM_RING);
         return config;

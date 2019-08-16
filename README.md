@@ -162,6 +162,10 @@ private OptionConfig getOptionConfig() {
 AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_CHINESE);
 //   设置为英文
 AppConfigs.setLanguege(AppConfigs.LANGAUGE_ENGLISH);
+//   设置为韩文
+AppConfigs.setLanguege(AppConfigs.LANGAUGE_KOREAN);
+//   设置为越南语
+AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_VIETNAMESE);
 
 ```
 
@@ -240,6 +244,49 @@ optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_RANKING_LIST, com.fota
 optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_VIDEO_LIST, com.fota.option.R.mipmap.left_menu_video_on, com.fota.option.R.mipmap.left_menu_video_off));
 config.setOptionMenuItems(optionMenuItems);
 ```
+
+### 0.5.2增加分享功能
+
+```java
+
+//设置logo
+config.setShareLogo(R.drawable.xxx);
+
+//设置下载链接
+config.setShareLoadUrl("app download url");
+
+//设置list
+config.setShareMenuList();
+
+//设置点击item监听 i返回list对于下标
+config.setShareMenuListener(new OptionConfig.OnClickShareMenuListener() {
+    @Override
+    public void onClickShareMenu(Activity activity, int i, Bitmap bitmap) {
+
+    }
+});
+
+```
+
+之外需要设置根目录build.gradle
+```
+repositories {
+        google()
+        jcenter()
+        maven { url "https://www.jitpack.io" }
+        maven { url 'https://dl.bintray.com/fota/release' }
+}
+
+```
+
+App目录的build.gradle
+```
+implementation 'com.android.support:appcompat-v7:27.1.1'
+implementation 'com.android.support:design:27.1.1'
+
+```
+
+
 
 ### OptionMenuKey 含义
 MENU_BACK ==>返回
