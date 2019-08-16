@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.support.annotation.NonNull;
 
+import com.fota.android.commonlib.base.AppConfigs;
 import com.fota.android.commonlib.utils.SharedPreferencesUtil;
 import com.fota.option.OptionConfig;
 import com.fota.option.OptionManager;
@@ -111,6 +112,7 @@ public class TestAppcation extends Application {
         //侧边栏风格 默认开启
         config.setSidebarStyle(true);
         config.setDevelopment(true);
+        AppConfigs.setLanguege(AppConfigs.LANGAUGE_KOREAN);
         //默认是铃声一般不用修改
         config.setStreamType(AudioManager.STREAM_RING);
         return config;
