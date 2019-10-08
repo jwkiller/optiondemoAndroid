@@ -274,21 +274,23 @@ config.setOptionMenuItems(optionMenuItems);
 ### 0.5.2增加分享功能
 
 ```java
+//隐藏历史记录分享功能
+config.setShowShareMenu(boolean false);
 
 //设置logo
-config.setShareLogo(R.drawable.xxx);
+config.setShareLogo(int drawableID);
 
 //设置下载链接
-config.setShareLoadUrl("app download url");
+config.setShareLoadUrl(String "your app download url");
 
-//设置list
-config.setShareMenuList();
+//设置平台list   以数组的使用传递 ShareMenuItem menuIcon+menuString是必须的
+config.setShareMenuList(List<ShareMenuItem> your app share platform);
 
-//设置点击item监听 i返回list对于下标
+//设置点击item监听 i返回list对于下标 根据下表获取对应ShareMenuItem分享
 config.setShareMenuListener(new OptionConfig.OnClickShareMenuListener() {
     @Override
     public void onClickShareMenu(Activity activity, int i, Bitmap bitmap) {
-
+            
     }
 });
 
