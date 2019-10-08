@@ -142,16 +142,30 @@ private OptionConfig getOptionConfig() {
 
         }
     });
-
-
+            
     //日志开关 调试的时候查看
     config.setLogEnable(false);
     //侧边栏风格 默认开启
     config.setSidebarStyle(true);
+    //侧边栏风格 默认开启
+    config.setSidebarStyle(true);
+    //设置开发环境
     config.setDevelopment(true);
-    //默认是铃声一般不用修改
-    config.setStreamType(AudioManager.STREAM_RING);
-    return config;
+    //切换语言
+    config.setShowLanguageChangedMenu(true);
+    config.setLanguageChangeListener(new OptionConfig.OnLanguageChangeListener() {
+        @Override
+        public void changeLanguage(int i) {
+        
+        }
+    });
+    //是否开启PK活动
+    config.setShowPk(false);
+    //进去设置默认语言
+    AppConfigs.setLanguege(AppConfigs.LANGAUGE_ENGLISH);
+        return config;
+    }
+    
 }
 
 ```
