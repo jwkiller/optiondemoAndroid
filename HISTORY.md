@@ -2,7 +2,7 @@
 
 ## v0.5.3
 
-1.增加PK功能
+1.增加PK功能 可在config.setShowPk(true)开启
 
 2.增加俄语
 
