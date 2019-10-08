@@ -30,10 +30,7 @@ public class TestAppcation extends Application {
         OptionManager.userId = "2509811795991987200";
         OptionManager.token = "kbcsp9lsra";
         OptionManager.setBrokerId("2");
-
-
         OptionManager.init("2", config, this);
-
     }
 
     @NonNull
@@ -102,7 +99,6 @@ public class TestAppcation extends Application {
         });
 
 
-
         //去除排行版 设置setOptionMenuItems 注释掉对应菜单Items即可
 //        List<OptionMenuItem> optionMenuItems = new ArrayList<>();
 //        optionMenuItems.add(new OptionMenuItem(OptionMenuKey.MENU_BACK, com.fota.option.R.mipmap.icon_back, com.fota.option.R.mipmap.icon_back));
@@ -115,9 +111,25 @@ public class TestAppcation extends Application {
         config.setLogEnable(false);
         //侧边栏风格 默认开启
         config.setSidebarStyle(true);
+        //侧边栏风格 默认开启
+        config.setSidebarStyle(true);
+        //设置开发环境
         config.setDevelopment(true);
-        AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_VIETNAMESE);
+        //切换语言
+        config.setShowLanguageChangedMenu(true);
+        config.setLanguageChangeListener(new OptionConfig.OnLanguageChangeListener() {
+            @Override
+            public void changeLanguage(int i) {
+
+            }
+        });
+        //是否开启PK活动
+        config.setShowPk(false);
+        //进去设置默认语言
+        AppConfigs.setLanguege(AppConfigs.LANGAUGE_ENGLISH);
         //默认是铃声一般不用修改
+
+
         config.setStreamType(AudioManager.STREAM_RING);
         return config;
     }

@@ -85,12 +85,13 @@ startActivity(intent);
 private OptionConfig getOptionConfig() {
     OptionConfig config = new OptionConfig();
         config.setAllOrderPageChangeListener(new OptionConfig.AllOrderPageChangeListener() {
+        
         @Override
         public void gotoAllOrderPage(Activity activity, AccountInfo accountInfo, boolean b) {
             //跳转全部订单
             Intent intent = new Intent(activity, AllOrderPageActivity.class);
             startActivity(intent);
-        }
+            }
         });
 
         config.setLoginPageChangeListener(new OptionConfig.LoginPageChangeListener() {
@@ -166,8 +167,33 @@ AppConfigs.setLanguege(AppConfigs.LANGAUGE_ENGLISH);
 AppConfigs.setLanguege(AppConfigs.LANGAUGE_KOREAN);
 //   设置为越南语
 AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_VIETNAMESE);
+//   进去为俄罗斯语言
+AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_VIETNAMESE);
 
 ```
+
+如果在在SDK内部替换语言功能，需要打开setShowLanguageChangedMenu
+```java
+//设置为true切换语言按钮开启，但是该语言切换只在SDK内部生效
+config.setShowLanguageChangedMenu(true);
+```
+
+可以设置回调，来获取到SDK切换语言到事件
+```java
+config.setLanguageChangeListener(new OptionConfig.OnLanguageChangeListener() {
+    @Override
+    public void changeLanguage(int i) {
+        swicth(i){
+            case AppConfigs.LANGAUGE_SIMPLE_CHINESE:
+                break;
+                ....
+        }
+    }
+});
+```
+
+
+
 
 
 ### 3.3 设置开发模式
