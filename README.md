@@ -180,7 +180,7 @@ AppConfigs.setLanguege(AppConfigs.LANGAUGE_KOREAN);
 //   设置为越南语
 AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_VIETNAMESE);
 //   进去为俄罗斯语言
-AppConfigs.setLanguege(AppConfigs.LANGAUGE_SIMPLE_VIETNAMESE);
+AppConfigs.setLanguege(AppConfigs.LANGAUGE_RUSSIAN);
 
 ```
 
